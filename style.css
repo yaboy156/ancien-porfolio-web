@@ -1,25 +1,31 @@
 /*variable*/
 :root{
 --dark-color: black;
---orange:#ff5400;
---blue:#5aabaf ;
---light-color:white;
+--text-box-color:#ff5400;
+--body-border-color:black ;
+--background-color:grey;
+--hover-color:red;
+--h2-font-size: 25px;
+--p-font-size: 16px;
+--padding-contour-text: 4%;
+--padding-entre-titre-paragraphe: 10%;
+--dimension-img-dans-grid: 100%;
 font-family: "preconnect, Arial";
 }
 
-/*imports*/
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
 body {
-    background-color: var(--blue);
-    margin:50px; 
+    background-color: var(--body-border-color);
+    margin: 3%; 
 }
 
 p{
-    font-size: 14;
+    font-size: var(--p-font-size);
 }
 
 h2{
-    font-size: 16;
+   font-size: var(--h2-font-size);
 }
 
 ul {
@@ -30,113 +36,17 @@ ul {
     color: var(--dark-color);
   }
 
-.message-presantation{
+.text-style{
     border-width: 2px;
     border-style: solid;
     border-color:var(--dark-color);
-    background-color: var(--orange);
-    text-align: center;
-}
-
-.nav-bar{
-    text-align: center;
-    background-color: var(--light-color);
-    width: 100%;
-    height: auto;
-    padding-top: 50px;
-    padding-bottom: 100px;
-}
-
-.titre-1{
-    text-align: center;
-    margin-right: 8%;
-    margin-left: 60%;
-    border-width: 2px;
-    border-style: solid;
-    border-color:var(--dark-color);
-    background-color: var(--orange);
-}
-
-.titre-2{
-    text-align: center;
-    margin-right: 60%;
-    margin-left: 8%;
-    border-width: 2px;
-    border-style: solid;
-    border-color:var(--dark-color);
-    background-color: var(--orange);
-}
-
-.contour-titre{
-    text-align: center;
-    background-color: var(--light-color);
-    padding-top: 5%;
-    padding-bottom: 15%;
-    margin-top: 10%;
-}
-
-.paragraphe-modele-1{
-    text-align: center;
-    border-style: solid;
-    border-color:var(--dark-color);
-    margin-left: 20%;
-    background-color: var(--orange);
-    padding-bottom: 5%;
-    padding-top: 5%;
-}
-
-.paragraphe-modele-2{
-    text-align: center;
-    border-style: solid;
-    border-color:var(--dark-color);
-    margin-right: 10%;
-    background-color: var(--orange);
-    padding-bottom: 5%;
-    padding-top: 5%;
-}
-
-.contour-titre-contact{
-    background-color: var(--light-color);
-    padding-bottom: 3%;
-    padding-top: 3%;
-}
-
-.contour-text-contact{
-    background-color: var(--light-color);
-    padding-bottom: 5%;
-    padding-top: 3%;
-}
-
-.conteneur-text-contact{
-    text-align: center;
-    border-style: solid;
-    border-color:var(--dark-color);
-    border-style: solid;
-    background-color: var(--orange);
-    padding-bottom: 5%;
-    padding-top: 5%;
-    margin-left: 20%;
-    margin-right: 20%;
-    align-items: center;
-}
-
-img{
-    max-width: auto;
-    max-height: auto;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.contour-image-titre{
-    background-color: var(--light-color);
-    padding-top: 7%;
-    padding-bottom: 7%;
+    background-color: var(--text-box-color);
     text-align: center;
 }
 
 .boutton{
     position:relative;
-    background-color: var(--orange);
+    background-color: var(--text-box-color);
     padding: 10px;
     border-radius: 5px;
     border-style:inset;
@@ -145,78 +55,131 @@ img{
     border-color: var(--dark-color);
 }
 
+.nav-bar{
+    text-align: center;
+    background-color: var(--background-color);
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.paragraphe-modele-droit{
+    margin-left: 20%;
+    padding: var(--padding-contour-text); 
+}
+
+.paragraphe-modele-gauche{
+    margin-right: 20%;
+    padding: var(--padding-contour-text); 
+}
+
+.titre{
+    padding: var(--padding-contour-text);
+}
+
+img{
+    max-width: 400px;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+}
+
+.contour-image-titre{
+    background-color: var(--background-color);
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+    margin-right:auto;
+    margin-left: auto;
+}
+
 .boutton:hover {
 top : 2px;
-background-color: red;
+background-color: var(--hover-color);
 }
 
-.contour-boutton-page-contact{
-background-color: var(--light-color);
-}
-
-.grid-container-text-droit{
+.grid-container-page-principale{
+    margin-top: 7%;
     display: grid;
-    background-color: var(--light-color);
-    grid-template-columns: 35% auto;
-    grid-template-rows: auto;
-    padding-bottom: 5%;
+    background-color: var(--background-color);
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    padding: 3%;
 }
 
-.grid-container-text-gauche{
-    display: grid;
-    background-color: var(--light-color);
-    grid-template-columns: 65% auto;
-    grid-template-rows: auto;
-    padding-bottom: 5%;
+.grid-item-titre{
+    grid-column: 1/3;
+    grid-row: 1/1;
+    padding-bottom: var(--padding-entre-titre-paragraphe);
 }
 
-.grid-item-img1{
+.center-element{
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+justify-content: center;
+align-items: center;
+}
+
+.grid-item-img-gauche{
 grid-column: 1/1;
-grid-row: 1/1;
+grid-row: 2/2;
+width: var(--dimension-img-dans-grid);
+height: var(--dimension-img-dans-grid);
+}
+
+.grid-item-img-droit{
+    grid-column: 2/2;
+    grid-row: 2/2;
+    width: var(--dimension-img-dans-grid);
+    height: var(--dimension-img-dans-grid);
 }
 
 .grid-item-text-droit{
     grid-column: 2/2;
-    grid-row: 1/1;
+    grid-row: 2/2;
 }
 
 .grid-item-text-gauche{
     grid-column: 1/1;
-    grid-row: 1/1;
-}
-
-.grid-item-img2{
-    grid-column: 2/2;
-    grid-row: 1/1;
+    grid-row: 2/2;
 }
 
 .grid-container-page-contact{
     width: 100%;
     display: grid;
-    background-color: var(--light-color);
+    background-color: var(--background-color);
     align-content: center;
-    background-color: var(--light-color);
     justify-items: center;
     height: auto;
 }
 
 .grid-item-page-contact-top{
-    padding-top: 5%;
     text-align: center;
-    height: 5%;
     grid-row: 1/1;
+    padding: var(--padding-contour-text);
 }
 
 .grid-item-page-contact-middle{
     height: 5%;
-    width: 50%;
+    width: 80%;
     text-align: center;
     grid-row: 2/2;
+    padding: var(--padding-contour-text);
 }
 
 .grid-item-page-contact-bottom{
     text-align: center;
-    height: 5%;
     grid-row: 3/3;
-    padding-bottom: 10%;
+    padding: var(--padding-contour-text);
+    width: 80%;
+    height: 5%;
+}
+
+.conteneur-text-contact{
+    padding: var(--padding-contour-text);
+    margin-left: 20%;
+    margin-right: 20%;
+    align-content: center;
 }
